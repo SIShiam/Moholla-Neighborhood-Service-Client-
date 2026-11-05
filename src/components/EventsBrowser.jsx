@@ -60,7 +60,7 @@ export default function EventsBrowser() {
       {/* Search & Filter Bar */}
       <ZoomIn delay={50} className="mt-8 flex flex-col gap-4">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-          <label className="input input-bordered flex flex-1 items-center gap-2 rounded-full border-base-300/80 bg-base-100/80 px-4 shadow-lg backdrop-blur-xl focus-within:border-primary">
+          <label className="input flex flex-1 items-center gap-2 rounded-full border-base-300/80 bg-base-100/80 px-4 shadow-lg backdrop-blur-xl focus-within:border-primary">
             <Search className="h-4 w-4 text-primary" aria-hidden="true" />
             <input
               type="search"

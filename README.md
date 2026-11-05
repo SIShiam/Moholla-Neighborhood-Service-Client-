@@ -1,9 +1,8 @@
 # Mohollah (মহল্লা)
 
-A neighbourhood noticeboard for community service events in Dhaka. People post drives such as winter clothes distribution, tree planting and blood camps, and neighbours join them.
+A neighborhood noticeboard for community service events in Dhaka. People post drives such as winter clothes distribution, tree planting and blood camps, and neighbors join them.
 
-**Live site:** https://YOUR-CLIENT-URL.vercel.app
-**API:** https://YOUR-SERVER-URL.vercel.app
+
 
 ## Features
 
@@ -26,7 +25,7 @@ npm install
 npm run dev
 ```
 
-Start the API from the `server` folder (`npm run dev`) and run `npm run seed` once there to add sample events.
+Start the API from the `server` folder (`npm run dev`) and run `npm run seed` once there to add sample events
 
 ## Gallery photos
 
