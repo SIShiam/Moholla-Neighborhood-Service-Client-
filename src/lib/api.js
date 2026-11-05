@@ -29,7 +29,19 @@ async function request(path, { method = "GET", body, auth = false } = {}) {
       cache: "no-store",
     });
   } catch {
-    throw new ApiError("Could not reach the server. Check your connection and try again.", 0);
+    const isLocalBackendInProd =
+      typeof window !== "undefined" && window.location.protocol === "https:" && BASE.includes("localhost");
+    if (isLocalBackendInProd) {
+      console.error(
+        "[API Error] Your live Vercel site is trying to reach http://localhost:5000. Please deploy your backend server and set NEXT_PUBLIC_API_URL in your Vercel Environment Variables to your live backend URL."
+      );
+    }
+    throw new ApiError(
+      isLocalBackendInProd
+        ? "Could not reach the backend server. Please configure NEXT_PUBLIC_API_URL on Vercel with your live backend server URL."
+        : "Could not reach the server. Make sure the backend server is running on port 5000.",
+      0
+    );
   }
 
   const json = await res.json().catch(() => null);
